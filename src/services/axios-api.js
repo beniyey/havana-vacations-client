@@ -20,7 +20,7 @@ export function apiFetch(route = "") {
         headers.authorization = "Bearer " + token
     }
 
-    return axios.get("https://www.webies-media.com/" + route, { headers: { Authorization: "Bearer " + token } })
+    return axios.get("https://www.webies-media.com/" + route, { headers })
 }
 
 export async function isLoggedIn() {

@@ -19,11 +19,11 @@ export default function Vacations() {
 
 
     useEffect(() => {
-        isLoggedIn().then((loggedIn) => {
-            if (!loggedIn) {
-                navigate("/")
-            }
-        })
+        // isLoggedIn().then((loggedIn) => {
+        //     if (!loggedIn) {
+        //         navigate("/")
+        //     }
+        // })
         fetchVacations()
     }, [])
 

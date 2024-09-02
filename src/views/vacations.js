@@ -28,8 +28,8 @@ export default function Vacations() {
     }, [])
 
     return (<>
-        {
-            vacations.map((el, index) => {
+        {  vacations.length != 0 &&
+            vacations?.map((el, index) => {
                 return <Vacation key={index} data={el} />
             })
         }

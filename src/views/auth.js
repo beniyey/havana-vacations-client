@@ -24,6 +24,10 @@ export default function Auth() {
                 password: "12345678"
             }
             const response = await apiPost("auth/login", credentials)
+
+            const data = response.data
+            localStorage.setItem("token", data.accessToken?.toString())
+
             navigate("/vacations")
         } catch (error) {
             console.error(error.message)

@@ -16,6 +16,8 @@ export default function Login() {
         try {
             formRef.current.reportValidity()
             const response = await apiPost("auth/login", credentialsForm)
+            const data = response.data
+            localStorage.setItem("token", data.accessToken?.toString())
             navigate("/vacations")
         } catch (error) {
             console.error(error.message)

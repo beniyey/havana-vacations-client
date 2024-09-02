@@ -17,7 +17,8 @@ export default function Register() {
     async function register() {
         try {
             const response = await apiPost("auth/register", registerForm)
-            console.log(response)
+            const data = response.data
+            localStorage.setItem("token", data.accessToken?.toString())
             navigate("/vacations")
         } catch (error) {
             console.error(error.message)
